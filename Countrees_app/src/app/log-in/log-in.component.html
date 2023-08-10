@@ -1,0 +1,9 @@
+<p>log-in works!</p>
+<h2>{{hero}}</h2>
+<div *ngIf="show_signin_page">
+    <app-sign-in (openSignupPageOutput)="signUp()"></app-sign-in>
+  </div>
+  <div *ngIf="show_signup_page">
+    <app-sign-up></app-sign-up>
+  </div>
+  
