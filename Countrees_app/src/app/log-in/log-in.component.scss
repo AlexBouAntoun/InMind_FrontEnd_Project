@@ -1,0 +1,122 @@
+@mixin important-text {
+    color: #3C73CB;
+   font-weight: 500;
+   }
+   
+.container {
+    height: 100%;
+  }
+
+.left_element {
+    height: 100%;
+    width: 55%;
+}
+
+.background_image{
+   background-image:   linear-gradient(to left, rgba(255, 255, 255, 0.200), rgba(255, 255, 255, 0.750), rgba(255, 255, 255, 1)),
+    url("../../assets/images/login-background.jpg"); 
+    background-size: 100%, 100%; 
+    background-repeat: no-repeat;
+    background-position: center right;  
+    height: 100%;
+    width: 45%;
+    /*min-height: 100vh;  */
+    // display: flex;
+    // justify-content: flex-start; 
+    // align-items: center;
+    // margin-top:0px
+}
+
+@media (max-width: 426px) {
+    .background_image {
+        display: none;  
+    }
+
+    .left_element{
+        width: 100%;
+    }
+}
+
+.logo{
+    background-image: url("../../assets/images/logo_blue.png");
+    background-repeat: no-repeat;
+    margin-left: 60px;
+    margin-top: 70px;
+    width: 240px;
+    height: 70px;
+}
+
+.left_element_content{
+    margin: 10% 10% 0% 10%;
+}
+
+.title{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.linked_text{
+    @include important-text;
+}
+
+.form_field {
+    margin-top: 10px;
+    position: relative;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown) ~ .label{
+    top: 5px;
+    font-size: 8px;
+}
+
+.label{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.checkbox{
+    margin-top: 20px;
+}
+
+.option{
+    margin-bottom: 50px;
+}
+
+.button{
+    background-color: #3D8D7B;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 40%;
+}
+
+.semi_bold {
+    font-weight: 500;
+}
+
+// .background_gradient{
+//     width: 55%;
+//     background-color: linear-gradient(to right, green, rgba(255, 255, 255, 0.368));
+    
+//     position: relative;
+//     height: 100vh;
+//     // -webkit-box-shadow: 29px 0px 50px 22px rgba(255,255,255,0.18); 
+//     // box-shadow: 29px 0px 50px 22px rgba(255,255,255,0.18);
+    
+
+// }
+
+// body{
+//     background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+//   background-size: 100% 100%; /* Full width and full height */
+//   background-repeat: no-repeat;
+//   min-height: 100vh;
+// }
+
+// .background_shadow{
+//     width: 50%;
+
+// }

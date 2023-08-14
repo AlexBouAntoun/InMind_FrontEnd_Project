@@ -3,7 +3,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  styleUrls: ['./sign-in.component.scss', '../log-in/log-in.component.scss']
 })
 export class SignInComponent {
 
@@ -16,5 +16,8 @@ export class SignInComponent {
   {
     this.openSignupPageOutput.emit();
   }
+
+  email: string = '';
+  password: string = '';
 
 }

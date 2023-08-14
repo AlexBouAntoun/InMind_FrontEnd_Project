@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,9 +11,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
 import { CountriesListingComponent } from './countries-listing/countries-listing.component';
-// import { CountruDetailsComponent } from './countru-details/countru-details.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
-
+//authentication module coutries modules
+//component services w models bl module
+//login page w sign up bel autheticatin module
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +23,13 @@ import { CountryDetailsComponent } from './country-details/country-details.compo
     SignInComponent,
     HomeComponent,
     CountriesListingComponent,
-    // CountruDetailsComponent,
     CountryDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,5 +15,9 @@ export class LogInComponent {
     this.show_signin_page = false;
     this.show_signup_page = true;
   }
+  signIn(){
+    this.show_signin_page = true;
+    this.show_signup_page = false;
+  }
 
 }
