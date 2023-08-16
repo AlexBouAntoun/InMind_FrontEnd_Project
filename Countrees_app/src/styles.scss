@@ -35,6 +35,19 @@ $Countrees_app-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+// @font-face {
+//   font-family: 'Jeko';
+//   src: url('./assets/fonts/Jeko-Medium.woff2') format('woff2'),
+//       url('./assets/fonts/Jeko-Medium.ttf') format('ttf'),
+//       url('./assets/fonts/Jeko-Medium.otf') format('otf'),
+//       url('./assets/fonts/Jeko-Medium.eot') format('eot'),
+//       url('./assets/fonts/Jeko-Medium.woff') format('woff');
+    
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
 * {
   margin: 0px;
   padding: 0px;

@@ -3,7 +3,7 @@ import { Component, Output, EventEmitter  } from '@angular/core';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss', '../log-in/log-in.component.scss']
+  styleUrls: ['./sign-up.component.scss', '../../pages/log-in/log-in.component.scss']
 })
 export class SignUpComponent {
 

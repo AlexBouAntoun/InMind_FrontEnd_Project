@@ -1,0 +1,46 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  .background_image{
+    background-image: url("/assets/images/countries-list.jpg"); 
+    background-size: 100%, 100%; 
+    background-repeat: no-repeat;
+    background-position: center center;  
+    height: 400px;
+    width: 100%;
+    display: flex;
+    //  position: relative;
+ }
+
+ .display_countries {
+  z-index: -1;
+  position: relative;
+  // top: 400px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+ }
+
+ .container {
+  height: 100%;
+}
+
+.mid_section {
+  position: absolute;
+  height: 70px;
+}

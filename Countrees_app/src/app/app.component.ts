@@ -5,8 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'Countrees_app';
-  public show_login_page : boolean = true;
-  public show_home_page : boolean = false;
+  // public show_login_page : boolean = true;
+  // public show_home_page : boolean = false;
 }
