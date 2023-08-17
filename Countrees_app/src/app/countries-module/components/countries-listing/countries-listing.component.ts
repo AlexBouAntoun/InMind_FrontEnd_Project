@@ -10,11 +10,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 
+import { CountrieslistService } from '../../services/countrieslist.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-countries-listing',
   templateUrl: './countries-listing.component.html',
   styleUrls: ['./countries-listing.component.scss'],
+  providers: [CountrieslistService],
   standalone: true,
   imports: [
     FormsModule,
@@ -34,11 +37,24 @@ export class CountriesListingComponent implements OnInit{
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<string[]> = new Observable<string[]>();
 
+countries: any[] = [];
+
+  constructor(
+    private countries_list_service: CountrieslistService,
+    private cookie_service: CookieService
+    ) {}
+
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value || '')),
     );
+
+    let auth_token = this.cookie_service.get('AuthToken');
+    
+    this.countries_list_service.Getcountries(auth_token).subscribe(result => {
+      this.countries = result;
+    });   
   }
 
   private _filter(value: string): string[] {
