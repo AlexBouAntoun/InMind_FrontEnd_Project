@@ -1,46 +1,30 @@
-<!-- <p>countries-listing works!</p> -->
-<!-- <div class="container"> -->
 <div class="background_image">
 
 </div>
 <div class="display_countries">
-<form class="mid_section">
-  <mat-form-field class="input">
-    <mat-label>Number</mat-label>
-    <input type="text"
-           placeholder="Pick one"
-           aria-label="Number"
-           matInput
-           [formControl]="myControl"
-           [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option}}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-  
-  <div class="example-button-container float_right">
-    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-      <mat-icon>delete</mat-icon>
-    </button>
-</div>
-</form> 
-<div class="listing">
-<div *ngFor="let country of countries"class="countries">
-  <img [src]="country.flags.png" alt="{{ country.flags.alt }} Flag" class="flag float_left">
-  <p class="country_name">{{ country.name.common }}</p>
-  <p class="country_continent">{{ country.continents[0] }}</p>
-</div>
-</div>
-<!-- <div class="box-container">
-  <div *ngFor="let country of countries" class="box">
-    <img [src]="country.flagUrl" alt="{{ country.name }} Flag" class="flag">
-    <p class="country-name">{{ country.name }}</p>
+  <form class="mid_section">
+    <mat-form-field class="input">
+      <mat-label>Country</mat-label>
+      <input type="text" placeholder="Pick one" aria-label="Country" matInput [formControl]="myControl"
+        [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <div class="example-button-container float_right">
+      <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+        <img src="\assets\images\icons8-filter-32.png">
+      </button>
+    </div>
+  </form>
+  <div class="listing">
+    <div *ngFor="let country of countries" class="countries">
+      <img [src]="country.flags.png" alt="{{ country.flags.alt }} Flag" class="flag float_left">
+      <p class="country_name">{{ country.name.common }}</p>
+      <p class="country_continent">{{ country.continents[0] }}</p>
+    </div>
   </div>
-</div> -->
 </div>
-<!-- </div> -->
-  <!-- <div class="float_right">
-    <button></button>
-  </div> -->

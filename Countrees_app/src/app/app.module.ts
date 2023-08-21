@@ -12,7 +12,7 @@ import { LogInComponent } from './authentication-module/pages/log-in/log-in.comp
 import { HomeComponent } from './countries-module/pages/home/home.component';
 
 import { AuthenticationModuleModule } from './authentication-module/authentication-module.module';
-import { CountriesModuleModule } from './countries-module/countries-module.module';///
+import { CountriesModuleModule } from './countries-module/countries-module.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { CountriesModuleModule } from './countries-module/countries-module.modul
     BrowserAnimationsModule,
     FormsModule
     , AuthenticationModuleModule
-    , CountriesModuleModule///
+    , CountriesModuleModule
     , HttpClientModule
   ],
   providers: [CookieService],

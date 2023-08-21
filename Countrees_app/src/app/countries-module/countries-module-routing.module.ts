@@ -3,19 +3,27 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CountriesListingComponent } from './components/countries-listing/countries-listing.component';
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
+import { HomeComponent } from './pages/home/home.component';
+
 
 const routes: Routes = [
-  { 
-    path: "countrieslisting",
-  component: CountriesListingComponent,
-  outlet: "home_outlet"
-},
-{ 
-  path: "countrydetails",
-component: CountryDetailsComponent,
-outlet: "home _outlet"
-}
+  {
+    path: "",
+    component: HomeComponent,
+    children: [
+      {
+        path: "countrieslisting",
+        component: CountriesListingComponent,
+      },
+      {
+        path: "countrydetails",
+        component: CountryDetailsComponent,
+      }
+    ]
+  }
 ];
+
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

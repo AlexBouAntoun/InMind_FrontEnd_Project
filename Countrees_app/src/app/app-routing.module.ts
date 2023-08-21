@@ -5,38 +5,23 @@ import { LogInComponent } from './authentication-module/pages/log-in/log-in.comp
 import { HomeComponent } from './countries-module/pages/home/home.component';
 
 const routes: Routes = [
+
   {
-    path: "",
-    redirectTo: 'login',
-    pathMatch: 'full'
+    path: '',
+    loadChildren: () => import('./authentication-module/authentication-module.module').then(m => m.AuthenticationModuleModule)
   },
-  { path: "login",
-  component: LogInComponent
-  // outlet: 'main',
-//   children: [
-//     {
-//       path: "",
-//       redirectTo: 'signin',
-//       pathMatch: 'full'
-//     },
-//     {
-//        path: 'signin',
-//        loadChildren: () => import('./authentication-module/authentication-module.module').then(m => m.AuthenticationModuleModule)
-//     }
-// ]
-},
-{ 
-  path: "home",
-component: HomeComponent
-// outlet: 'main_outlet'
-}
+  {
+    path: 'home',
+    loadChildren: () => import('./countries-module/countries-module.module').then(m => m.CountriesModuleModule)
+  }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
+export class AppRoutingModule {
 
 
 }

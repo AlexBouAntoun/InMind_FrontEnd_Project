@@ -1,23 +1,21 @@
-<!-- <a [routerLink]="['/sign-in']">Home</a> -->
-<div class="float_left">
-<div>
-  <p class="title"> Log in </p><br> 
-  <p class="option">Don't have an account? <a class="linked_text" (click)="openSignupPage()"> Sign up</a></p>
-</div>
-
-<form class="form_box" (submit)="LogIn()">
-<div class="form_field">
-  <input type="email" id="email" name="email" class="input" placeholder=" " required [(ngModel)]="email" />
-  <label class="label">Email</label>
-</div>
-<div class="form_field">
-  <input type="password" id="password" name="password" class="input" placeholder=" " required [(ngModel)]="password">
-  <label class="label">Password</label>
-</div>
+<div class="float_left form_box">
   <div>
-    <button type="submit" class="button float_right semi_bold">Log in</button>
-  <!-- <button type="submit" class="button float_right semi_bold" (click)="DynamicRouter('sign-in')" >Log in</button> -->
+    <p class="title"> Log in </p><br>
+    <p class="option">Don't have an account? <a class="linked_text" (click)="openSignupPage()"> Sign up</a></p>
   </div>
-  <!-- <a [routerLink]="['/sign-in']">Home</a> -->
-</form>
+
+  <form (submit)="LogIn()">
+    <div class="form_field">
+      <input type="email" id="email" name="email" class="input" placeholder=" " required [(ngModel)]="email" />
+      <label class="label">Email</label>
+    </div>
+    <div class="form_field">
+      <input type="password" id="password" name="password" class="input" placeholder=" " required
+        [(ngModel)]="password">
+      <label class="label">Password</label>
+    </div>
+    <div>
+      <button type="submit" class="button float_right bold">Log in</button>
+    </div>
+  </form>
 </div>

@@ -8,14 +8,14 @@ import { Component } from '@angular/core';
 export class LogInComponent {
 
   hero = 'Windstorm';
-  public show_signin_page : boolean = true;
-  public show_signup_page : boolean = false;
+  public show_signin_page: boolean = true;
+  public show_signup_page: boolean = false;
 
-  signUp(){
+  signUp() {
     this.show_signin_page = false;
     this.show_signup_page = true;
   }
-  signIn(){
+  signIn() {
     this.show_signin_page = true;
     this.show_signup_page = false;
   }

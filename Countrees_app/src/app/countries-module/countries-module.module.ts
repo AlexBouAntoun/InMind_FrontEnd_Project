@@ -9,13 +9,12 @@ import { CountryDetailsComponent } from './components/country-details/country-de
 
 @NgModule({
   declarations: [
-    // CountriesListingComponent,
     CountryDetailsComponent
   ],
   imports: [
     CommonModule
-    ,CountriesModuleRoutingModule//
-    ,CountriesListingComponent////
+    , CountriesModuleRoutingModule
+    , CountriesListingComponent
   ],
   exports: [
     CountriesListingComponent,

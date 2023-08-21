@@ -1,33 +1,32 @@
-.home_logo{
-    // background-image: url("../../../assets/images/logo_blue.png");
-    // background-repeat: no-repeat;
+.home_logo {
     margin-left: 60px;
     margin-top: 40px;
     width: 160px;
     height: 40px;
 }
 
-.profile_info{
+.profile_info {
     margin-right: 60px;
     margin-top: 40px;
     width: 160px;
     height: 40px;
+    display: flex;
+    align-items: center;
 
-    .user_name{
+    .user_name {
         margin-right: 10px;
         font-size: 24px;
-        font-weight: bold;
         color: white;
         vertical-align: top;
     }
 
-    img{
-        width: 30px;
+    img {
+        width: 40px;
     }
 }
 
-.header{
-    position : fixed;
+.header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

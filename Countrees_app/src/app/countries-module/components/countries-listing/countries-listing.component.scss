@@ -1,86 +1,81 @@
 .example-form {
-    // min-width: 150px;
-    // max-width: 500px;
-    width: 100%;
-    position: absolute;
-    top: -30px;
-    margin: 0 auto;
-  }
-
-
-  .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-  }
-
-  .background_image{
-    background-image: url("/assets/images/countries-list.jpg"); 
-    background-size: 100%, 100%; 
-    background-repeat: no-repeat;  
-    background-position: center center;
-    height: 400px;
-    width: 100%;
-    z-index: -1;
- }
-
- .display_countries {
-  // z-index: -1;
-  position: relative;
-  // top: 400px;
+  // min-width: 150px;
+  // max-width: 500px;
   width: 100%;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: space-evenly;
-  background-color: #F4F4F4;
-  // margin: 80px 0px 0px 200px;
- }
+  position: absolute;
+  top: -30px;
+  margin: 0 auto;
+}
 
-//  .container {
-//   height: 100%;
-// }
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.background_image {
+  background-image: url("/assets/images/countries-list.jpg");
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 400px;
+  width: 100%;
+  z-index: -1;
+}
+
+button.mat-fab {
+  background-color: #F4F4F4;
+}
+
+.display_countries {
+  position: relative;
+  width: 100%;
+  background-color: #F4F4F4;
+}
+
 
 .mid_section {
   position: absolute;
   top: -30px;
   left: 0px;
   width: 100%;
-  height: 70px;  
+  height: 70px;
   text-align: center;
 
-  .input{
+  .input {
     width: 100%;
     min-width: 150px;
     max-width: 600px;
   }
 }
 
-.listing{
+.listing {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding-top: 80px;
 }
 
-.countries{
+.countries {
   width: 390px;
   border-radius: 20px;
   background-color: white;
   padding: 10px;
   margin-bottom: 10px;
 
-  img{
+  img {
     width: 80px;
     height: 50px;
     margin-right: 10px;
     border-radius: 10px;
   }
 
-  .country_name{
+  .country_name {
     font-weight: bold;
   }
 
-  .country_continent{
+  .country_continent {
     color: #919191;
   }
 

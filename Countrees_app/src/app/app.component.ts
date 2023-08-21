@@ -8,6 +8,4 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Countrees_app';
-  // public show_login_page : boolean = true;
-  // public show_home_page : boolean = false;
 }

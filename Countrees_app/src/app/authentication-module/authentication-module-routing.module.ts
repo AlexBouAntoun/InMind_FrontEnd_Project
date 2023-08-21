@@ -3,18 +3,29 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './pages/log-in/log-in.component';
 
 const routes: Routes = [
-  { 
-    path: "signin",
-  component: SignInComponent,
-  outlet: "login_outlet"
-},
-{ 
-  path: "signup",
-component: SignUpComponent,
-outlet: "login_outlet"
-}
+  {
+    path: "",
+    component: LogInComponent,
+    children: [
+      {
+        path: "",
+        redirectTo: 'signin',
+        pathMatch: 'full'
+      },
+      {
+        path: "signin",
+        component: SignInComponent,
+      },
+      {
+        path: "signup",
+        component: SignUpComponent,
+      }
+    ]
+  },
+
 ];
 
 @NgModule({

@@ -1,41 +1,47 @@
-<div class="float_left">
-<div>
-    <p class="title"> Create new account</p><br>
-    <p class="option"> Already a member? <span class="linked_text" type="text" (click)="openSigninPage()"> Log in</span></p>
-</div>
-
-<form class="form_box">
+<div class="float_left form_box">
     <div>
-    <div class="float_left form_field">
-    <input type="text" id="firstName" name="firstName" class="input" placeholder=" " required [(ngModel)]="firstName"> 
-    <label class="label">First name</label>
-</div>
-<div class="float_right form_field">
-    <input type="text" id="lastName" name="lastName" class="input" placeholder=" " required [(ngModel)]="lastName">
-    <label class="label">Last name</label>
-</div>
-    <div class="clear"></div>
-</div>
-<div class="form_field">
-    <input type="email" id="email" name="email" class="input" placeholder=" " required [(ngModel)]="email">
-    <label class="label">Email</label>
-  </div>
-  <div class="form_field">
-    <input type="password" id="password" name="password" class="input" placeholder=" " required [(ngModel)]="password">
-    <label class="label">Password</label>
-</div>
-<div class="checkbox">
-    <input type="checkbox" id="admin" name="admin_account" >
-    <label> Create <span class="semi_bold">Admin</span> account</label>
-</div>
-<div class="checkbox">
-    <input type="checkbox" id="terms" name="terms_and_conditions" >
-    <label> I agree to the <span class="semi_bold">terms and conditions</span> as set out by the user agreement.<br>
-        <span class="user_agreement">By clicking here, I state that i have read and understood the terms and conditions</span>
-    </label>
-</div>
-    <div>
-    <button type="submit" class="button float_right semi_bold">Sign Up</button>
+        <p class="title"> Create new account</p><br>
+        <p class="option"> Already a member? <a class="linked_text" type="text" (click)="openSigninPage()"> Log in</a>
+        </p>
     </div>
-  </form>
+
+    <form>
+        <div>
+            <div class="float_left form_field">
+                <input type="text" id="firstName" name="firstName" class="input" placeholder=" " required
+                    [(ngModel)]="firstName">
+                <label class="label">First name</label>
+            </div>
+            <div class="float_right form_field">
+                <input type="text" id="lastName" name="lastName" class="input" placeholder=" " required
+                    [(ngModel)]="lastName">
+                <label class="label">Last name</label>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form_field">
+            <input type="email" id="email" name="email" class="input" placeholder=" " required [(ngModel)]="email">
+            <label class="label">Email</label>
+        </div>
+        <div class="form_field">
+            <input type="password" id="password" name="password" class="input" placeholder=" " required
+                [(ngModel)]="password">
+            <label class="label">Password</label>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="admin" name="admin_account">
+            <label> Create <span class="semi_bold">Admin</span> account</label>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="terms" name="terms_and_conditions">
+            <label> I agree to the <span class="semi_bold">terms and conditions</span> as set out by the user
+                agreement.<br>
+                <span class="user_agreement">By clicking here, I state that i have read and understood the terms and
+                    conditions</span>
+            </label>
+        </div>
+        <div>
+            <button type="submit" class="button float_right bold">Sign Up</button>
+        </div>
+    </form>
 </div>

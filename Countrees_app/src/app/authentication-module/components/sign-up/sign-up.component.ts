@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter  } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,15 +10,16 @@ export class SignUpComponent {
 
   @Output() openSigninPageOutput = new EventEmitter();
 
-  constructor() {}
+  constructor(
+    private router: Router,
+  ) { }
 
-  openSigninPage() 
-  {
-    this.openSigninPageOutput.emit();
+  openSigninPage() {
+    this.router.navigate(['/signin']);
   }
 
-  firstName: string ='';
-  lastName: string ='';
+  firstName: string = '';
+  lastName: string = '';
   email: string = '';
   password: string = '';
 

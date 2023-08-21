@@ -14,17 +14,15 @@ import { LoginService } from '../../services/log-in.service';
 export class SignInComponent {
   @Output() openSignupPageOutput = new EventEmitter();
 
-  // @Output() openHomePageOutput = new EventEmitter();
 
-  
   email: string = '';
   password: string = '';
 
   constructor(
-    private router : Router,
+    private router: Router,
     private login_service: LoginService,
     private cookie_service: CookieService
-    ) {}
+  ) { }
 
   // DynamicRouter(linkName : string) {
   //   if(linkName == 'sign-in')
@@ -33,22 +31,16 @@ export class SignInComponent {
   //   }
   // }
 
-  LogIn(){
+  LogIn() {
     this.login_service.Login(this.email, this.password).subscribe(result => {
       this.cookie_service.set('AuthToken', result.Login.AccessToken);
       //this.cookieValue = this.cookieService.get('AuthToken');
-      this.router.navigate(['/home']);
-    });    
+      this.router.navigate(['/home/countrieslisting']);
+    });
   }
 
-  openSignupPage() 
-  {
-    this.openSignupPageOutput.emit();
+  openSignupPage() {
+    this.router.navigate(['/signup']);
   }
-
-  // openHomePage() {
-  //   this.openHomePageOutput.emit();
-  // }
-
 
 }

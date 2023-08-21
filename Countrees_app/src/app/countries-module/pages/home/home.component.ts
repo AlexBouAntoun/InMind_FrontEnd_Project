@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  public show_countrieslisting_page : boolean = true;
-  public show_countrydetails_page : boolean = false;
+  public show_countrieslisting_page: boolean = true;
+  public show_countrydetails_page: boolean = false;
+
 }
