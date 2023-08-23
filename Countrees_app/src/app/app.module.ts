@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
+import { NgxPermissionsModule } from 'ngx-permissions';
 import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,13 +23,16 @@ import { CountriesModuleModule } from './countries-module/countries-module.modul
     HomeComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule
+    , NgxPermissionsModule.forRoot()
     , AuthenticationModuleModule
     , CountriesModuleModule
     , HttpClientModule
+    , ReactiveFormsModule 
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

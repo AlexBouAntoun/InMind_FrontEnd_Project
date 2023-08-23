@@ -53,6 +53,11 @@
     font-weight: bold;
 }
 
+// environment.ts: baseurl: "la hadit v.."  authurl:"https173..../api"
+// authentications.services.ts: authurl = environment.authurl;
+// bel return post(this.authurl="/user/login()")
+// use permissions check library
+//network preview bsshouf l token
 .linked_text {
     @include important-text;
 }
@@ -89,6 +94,11 @@
     border-radius: 20px;
     margin-top: 30px;
     width: 40%;
+
+    &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
 }
 
 .semi_bold {
@@ -133,5 +143,11 @@ form {
 }
 
 .form_box {
-    width: 75%;
+    width: 80%;
+}
+
+.result{
+    color: red; 
+  font-size: 14px; 
+  margin-top: 5px;
 }

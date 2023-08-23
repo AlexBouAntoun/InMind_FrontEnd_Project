@@ -5,35 +5,35 @@
         </p>
     </div>
 
-    <form>
+    <form (submit)="signUp()" class="form_position">
         <div>
             <div class="float_left form_field">
                 <input type="text" id="firstName" name="firstName" class="input" placeholder=" " required
-                    [(ngModel)]="firstName">
+                    [(ngModel)]="signupForm.Firstname">
                 <label class="label">First name</label>
             </div>
             <div class="float_right form_field">
                 <input type="text" id="lastName" name="lastName" class="input" placeholder=" " required
-                    [(ngModel)]="lastName">
+                    [(ngModel)]="signupForm.Lastname">
                 <label class="label">Last name</label>
             </div>
             <div class="clear"></div>
         </div>
         <div class="form_field">
-            <input type="email" id="email" name="email" class="input" placeholder=" " required [(ngModel)]="email">
+            <input type="email" id="email" name="email" class="input" placeholder=" " required [(ngModel)]="signupForm.Email">
             <label class="label">Email</label>
         </div>
         <div class="form_field">
             <input type="password" id="password" name="password" class="input" placeholder=" " required
-                [(ngModel)]="password">
+                [(ngModel)]="signupForm.Password">
             <label class="label">Password</label>
         </div>
         <div class="checkbox">
-            <input type="checkbox" id="admin" name="admin_account">
+            <input type="checkbox" id="admin" name="admin_account" [(ngModel)]="isAdmin">
             <label> Create <span class="semi_bold">Admin</span> account</label>
         </div>
         <div class="checkbox">
-            <input type="checkbox" id="terms" name="terms_and_conditions">
+            <input type="checkbox" id="terms" name="terms_and_conditions" [(ngModel)]="terms">
             <label> I agree to the <span class="semi_bold">terms and conditions</span> as set out by the user
                 agreement.<br>
                 <span class="user_agreement">By clicking here, I state that i have read and understood the terms and

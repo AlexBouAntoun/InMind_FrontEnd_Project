@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { NgxPermissionsModule } from 'ngx-permissions';
 import { AuthenticationModuleRoutingModule } from './authentication-module-routing.module';
 
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -17,6 +18,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     CommonModule,
     FormsModule,
     AuthenticationModuleRoutingModule
+    , NgxPermissionsModule.forChild()
+    , ReactiveFormsModule
   ],
   exports: [
     SignUpComponent,

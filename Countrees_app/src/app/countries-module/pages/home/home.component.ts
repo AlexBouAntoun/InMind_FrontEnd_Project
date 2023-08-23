@@ -1,13 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CookieService } from 'ngx-cookie-service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  user_name: string = "";
 
-  public show_countrieslisting_page: boolean = true;
-  public show_countrydetails_page: boolean = false;
+  constructor(
+    private cookie_service: CookieService
+  ) { }
 
+  ngOnInit() {
+    this.user_name = this.cookie_service.get('UserName');
+  }
 }

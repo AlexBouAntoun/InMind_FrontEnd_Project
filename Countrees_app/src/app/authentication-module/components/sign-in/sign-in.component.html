@@ -4,18 +4,27 @@
     <p class="option">Don't have an account? <a class="linked_text" (click)="openSignupPage()"> Sign up</a></p>
   </div>
 
-  <form (submit)="LogIn()">
+  <form [formGroup]="login_form" (ngSubmit)="LogIn()">
     <div class="form_field">
-      <input type="email" id="email" name="email" class="input" placeholder=" " required [(ngModel)]="email" />
+      <input type="email" id="email" name="email" class="input" placeholder=" " formControlName="email" />
       <label class="label">Email</label>
+      <!-- <div *ngIf="email?.hasError('required') && (email?.dirty || email?.touched)" class="error">
+        <div *ngIf="email?.hasError('required')">Email is required</div>
+        <div *ngIf="email?.hasError('email')">Invalid email format</div>
+      </div> -->
     </div>
     <div class="form_field">
-      <input type="password" id="password" name="password" class="input" placeholder=" " required
-        [(ngModel)]="password">
+      <input type="password" id="password" name="password" class="input" placeholder=" " formControlName="password">
       <label class="label">Password</label>
+      <!-- <div *ngIf="password?.hasError('required') && (password?.dirty || password?.touched)" class="error">
+        Password is required
+      </div> -->
     </div>
     <div>
-      <button type="submit" class="button float_right bold">Log in</button>
+      <button type="submit" class="button float_right bold" [disabled]="login_form.invalid">Log in</button>
     </div>
   </form>
+  <div class="result" *ngIf="authenticationError !== null">
+    {{ authenticationError }}
+  </div>
 </div>
