@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { combineLatest } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
 import { NgxPermissionsService } from 'ngx-permissions';
-import { CookieService } from 'ngx-cookie-service';
 
 import { CountrieslistService } from '../../services/countrieslist.service';
 
@@ -21,7 +22,7 @@ export class CountriesListingComponent implements OnInit {
   filteredOptions: string[] = [];
   roles: any;
 
-  private _filter(value: string, auth_token: string): any[] {
+  private _filter(value: string, auth_token: string | null): any[] {
     const filterValue = value.toLowerCase();
     let filteredCountries: any[] = this.countries_original.filter(x => x.name.common.toLowerCase().indexOf(filterValue) == 0);
     return filteredCountries;
@@ -30,13 +31,13 @@ export class CountriesListingComponent implements OnInit {
   constructor(
     private countries_list_service: CountrieslistService,
     private permission_service: NgxPermissionsService,
-    private cookie_service: CookieService
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.roles = this.permission_service.getPermissions();
 
-    let auth_token = this.cookie_service.get('AuthToken');
+    let auth_token = localStorage.getItem('AuthToken');
 
     this.countries_list_service.Getcountries(auth_token).subscribe(countries_res => {
       this.countries_original = countries_res;
@@ -50,4 +51,9 @@ export class CountriesListingComponent implements OnInit {
     });
 
   }
+
+  openCountryDetailsPage(name : string) {
+    this.router.navigate(['countrydetails/' + name]);
+  }
+
 }

@@ -1,1 +1,60 @@
-<p>country-details works!</p>
+<div class="background_image">
+<div class="back_button" >
+    <img src="/assets/images/icons8-back-50.png" (click)="openCountryListingPage()">
+</div>
+</div>
+
+<div class="display_countries">
+    <form class="mid_section">
+        <div class="example-button-container float_right" *ngxPermissionsOnly="['Admin']">
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                <img src="\assets\images\icons8-filter-32.png">
+            </button>
+        </div>
+    </form>
+    <div class="countrydisplayed">
+        <!-- <img [src]="country.flags.png" alt="{{ country.flags.alt }} Flag" class="flag float_left"> -->
+        {{country.name.common}}
+    </div>
+    <div class="listing">
+        <div class="countries">
+            <div class="info_section">
+                <p class="titles">Region</p>
+                {{country.region}}
+            </div>
+            <div class="info_section">
+                <p class="titles">Capital</p>
+                {{country.capital}}
+            </div>
+            <div class="info_section">
+                <p class="titles">Languages</p>
+                {{country.languages[0]}}
+            </div>
+
+        </div>
+        <div class="countries">
+            <div class="info_section">
+                <p class="titles">Currencies</p>
+                {{country.currencies.ZAR}}
+            </div>
+            <div class="info_section">
+                <p class="titles">Area</p>
+                {{country.area + ' m2'}}
+            </div>
+            <div class="info_section">
+                
+                <!-- {{country.}} -->
+            </div>
+
+        </div>
+        <div class="countries">
+            <p class="titles">Border Countries</p>
+            {{country.borders}}
+        </div>
+        <!-- <div *ngFor="let country of countries" class="countries">
+      <img [src]="country.flags.png" alt="{{ country.flags.alt }} Flag" class="flag float_left">
+      <p class="country_name">{{ country.name.common }}</p>
+      <p class="country_continent">{{ country.continents[0] }}</p>
+    </div> -->
+    </div>
+</div>

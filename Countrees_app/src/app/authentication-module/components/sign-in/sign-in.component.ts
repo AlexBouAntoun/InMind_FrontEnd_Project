@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 import { NgxPermissionsService } from 'ngx-permissions';
-import { CookieService } from 'ngx-cookie-service';
 
 import { LoginService } from '../../services/log-in.service';
 
@@ -23,7 +22,6 @@ export class SignInComponent {
     private router: Router,
     private login_service: LoginService,
     private permission_service: NgxPermissionsService,
-    private cookie_service: CookieService,
     private formBuilder: FormBuilder
   ) {
     this.login_form = this.formBuilder.group({
@@ -50,15 +48,17 @@ export class SignInComponent {
   
     this.login_service.Login(email, password).subscribe({
       next: (result: any) => {
-        this.cookie_service.set('AuthToken', result.Login.AccessToken);
+        localStorage.setItem('AuthToken', result.Login.AccessToken);
 
         let decodedToken: any;
         decodedToken = this.decodeToken(result.Login.AccessToken);
         this.permission_service.loadPermissions(decodedToken.realm_access.roles);
         
-        this.cookie_service.set('UserName', decodedToken.given_name);
+        localStorage.setItem('UserName', decodedToken.given_name);
         
-        this.router.navigate(['/home/countrieslisting']);
+        setTimeout(() => {
+          this.router.navigate(['/home/countrieslisting']);
+        }, 100);        
       },
       error: (error: any) => {
         console.error('Error during sign in:', error);

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-import { CookieService } from 'ngx-cookie-service';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +7,16 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  user_name: string = "";
+  user_name: string | null = "";
 
-  constructor(
-    private cookie_service: CookieService
-  ) { }
+  constructor(private router: Router,) { }
 
   ngOnInit() {
-    this.user_name = this.cookie_service.get('UserName');
+    this.user_name = localStorage.getItem('UserName');
   }
+
+  openCountryListingPage() {
+    this.router.navigate(['/countrieslisting']);
+  }
+
 }

@@ -5,7 +5,6 @@ import { CountriesListingComponent } from './components/countries-listing/countr
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
 import { HomeComponent } from './pages/home/home.component';
 
-
 const routes: Routes = [
   {
     path: "",
@@ -16,7 +15,7 @@ const routes: Routes = [
         component: CountriesListingComponent,
       },
       {
-        path: "countrydetails",
+        path: "countrydetails/:name",
         component: CountryDetailsComponent,
       }
     ]

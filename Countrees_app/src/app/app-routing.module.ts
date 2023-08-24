@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LogInComponent } from './authentication-module/pages/log-in/log-in.component';
 import { HomeComponent } from './countries-module/pages/home/home.component';
 
+import { appGuard } from './app.guard';
+
 const routes: Routes = [
 
   {
@@ -12,7 +14,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./countries-module/countries-module.module').then(m => m.CountriesModuleModule)
+    canActivateChild: [appGuard],
+    loadChildren: () => import('./countries-module/countries-module.module').then(m => m.CountriesModuleModule)    
   }
 
 ];
